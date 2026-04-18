@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://megjdt87pfak"]
+
+[ext_resource type="PackedScene" uid="uid://bfcqg76dqdkuq" path="res://mapa.tscn" id="2_fw4w5"]
+[ext_resource type="Texture2D" uid="uid://k5bc7eey8hsh" path="res://sky.jpeg" id="2_lgngo"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fw4w5"]
+panorama = ExtResource("2_lgngo")
+
+[sub_resource type="Sky" id="Sky_lgngo"]
+sky_material = SubResource("PanoramaSkyMaterial_fw4w5")
+
+[sub_resource type="Environment" id="Environment_6ba58"]
+background_mode = 2
+sky = SubResource("Sky_lgngo")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ba58"]
+size = Vector3(0.001, 0.36627197, 1.9969406)
+
+[node name="Mundo" type="Node3D" unique_id=840684315]
+
+[node name="mapa" parent="." unique_id=844008892 instance=ExtResource("2_fw4w5")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=115068114]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=226210861]
+environment = SubResource("Environment_6ba58")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=762883650]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=236501931]
+transform = Transform3D(0.99990034, 0.014119244, 0, -0.014119244, 0.99990034, 0, 0, 0, 1, 1.9010625, 0.8334625, -0.0186975)
+shape = SubResource("BoxShape3D_6ba58")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=201161175]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1005848630]
+offset_right = 226.0
+offset_bottom = 39.0
+text = "Presiona 'R' para Reiniciar"

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cj7dqhj4a7y8u"]
+
+[ext_resource type="Script" uid="uid://civ6h8enuulld" path="res://player.gd" id="1_48aib"]
+[ext_resource type="PackedScene" uid="uid://dksfwqc12a43o" path="res://patitobien.glb" id="2_47rpa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_48aib"]
+size = Vector3(0.2774048, 0.74328613, 0.5583954)
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=730209225]
+script = ExtResource("1_48aib")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=856811186]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.6749553, 0.69525343, 1.2646149)
+shape = SubResource("BoxShape3D_48aib")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1776885720]
+
+[node name="patitobien" parent="." unique_id=1058555445 instance=ExtResource("2_47rpa")]
+transform = Transform3D(0.003489949, 0, 0.09993907, 0, 0.099999994, 0, -0.09993907, 0, 0.003489949, 0.67689717, 0.5729946, 1.3138478)
+
+[node name="Camera3D" type="Camera3D" parent="patitobien" unique_id=776355179]
+transform = Transform3D(0.98279935, 3.2653515, -9.4006195, -0.011163185, 9.446706, 3.2801933, 9.951583, -0.31188294, 0.9320667, -10.589089, 3.6367722, 0.14384937)
+fov = 69.33095
